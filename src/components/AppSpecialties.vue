@@ -56,28 +56,47 @@ section:first-of-type{
 }
 
 .specialties{
-    padding-block: 60px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-block: 130px;
 
     transform: translateY(-50px);
 
     background-color: white;
+
+    hr{
+        margin-top: 30px;
+        margin-bottom: 70px;
+    }
 }
 
 #list-specialties{
     display: flex;
     justify-content: space-around;
+    gap: 110px;
+
+    align-items: center;
+
    
     .specialty{
+        text-align: center;
         .title{
             font-weight: bold;
+        }
 
+        .title{
+            padding-block: 25px;
+            font-size: 20px;
+        }
+
+        p{
+            width: 230px;
         }
     }
 
-    img{
-        height: 80px;
-    }
+    
 
 }
 

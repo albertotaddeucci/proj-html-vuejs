@@ -47,7 +47,7 @@ export default {
 
 
 #jumbo{
-  height: 470px;
+  height: 880px;
   background-image: url(/public/img/rev-slider-main-home-img-03.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,13 +56,14 @@ export default {
 nav{
   display: flex;
   justify-content: space-between;
+  align-items: center ;
 
   padding-block: 20px;
 
   #logo{
     
     img{
-      height: 14px;
+      height: 30px;
     }
   }
 
@@ -72,6 +73,7 @@ nav{
     gap: 20px;
 
     text-transform: uppercase;
+    font-weight: bold  ;
   }
 }
 
