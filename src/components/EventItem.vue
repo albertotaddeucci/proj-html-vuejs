@@ -26,8 +26,8 @@ export default {
         <div class="event-left">
             <div class="square">
 
-                <div>11</div>
-                <div>Jan 2022</div>
+                <div class="day">07</div>
+                <div class="month">Jan 2022</div>
 
             </div>
         </div>
@@ -41,7 +41,7 @@ export default {
             <div class="site-event small">
                 {{ event.eventSite }}
             </div>
-            <span>read more</span>
+            <button>read more</button>
         </div>
     </div>
 
@@ -49,25 +49,54 @@ export default {
 </template>
 
 <style lang="scss">
+@use '../styles/variables' as *;
+
 
 .event{
     display: flex;
-    gap: 12px;
+    gap: 25px;
 
-    padding: 25px;
+    padding: 40px;
     
-    border-bottom: 2px solid gray;
+    border-bottom: 1px solid $colorSecondary;
 }
+
 .event-left{
     width: 25%;
 
     .square{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        padding: 12px;
+
+        color: white;
         background-color: red;
+
+        .day{
+            font-weight: bold;
+
+
+        }
     }
 }
 
 .event-right{
     width: 75%;
+
+    .event-title{
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .small{
+        color: $colorSecondary;
+        margin-bottom: 14px;
+
+    }
 
     span{
         text-transform: uppercase;
@@ -75,9 +104,6 @@ export default {
     }
 }
 
-.small{
-    font-size: 8px;
-}
 
 
 </style>

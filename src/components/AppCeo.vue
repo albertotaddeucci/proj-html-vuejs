@@ -21,7 +21,6 @@ export default {
 
         <div class="container">
 
-
             <div class="container-sm">
                 <div id="ceo">
     
@@ -41,7 +40,6 @@ export default {
             </div>
 
         </div>
-        <!-- <img src="/public/svg/svg-4.svg" alt=""> -->
 
 
 
@@ -52,10 +50,6 @@ export default {
 </template>
 
 <style lang="scss">
-
-
-
-
 
 .section-ceo{
     background-color: #fafafa;
@@ -77,7 +71,6 @@ export default {
     display: flex;
     position: relative;
 
-
     img{
         width: 55%;
     }
@@ -86,14 +79,15 @@ export default {
 
 .info-ceo{
     width: 55%;
-
-    padding: 110px 50px;
-
+    
     position: absolute;
     top: 0;
     right: 0px;
 
+    padding: 110px 50px;
+    
     margin-block: 55px;
+
     background-color: white ;
 
     hr{

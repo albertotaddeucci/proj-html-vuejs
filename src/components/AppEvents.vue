@@ -55,7 +55,7 @@ export default {
 <style lang="scss">
 
 .events{
-    padding-block: 100px;
+    padding-block: 115px;
 
     background-image: url(/img/h1-img-09.jpg);
     background-repeat: no-repeat;
@@ -63,9 +63,16 @@ export default {
 }
 
 .event-list{
-    width: 275px;
+    width: 520px;
 
     background-color: white;
+
+    h3{
+        padding: 30px 45px;
+        border-bottom: 1px solid grey;
+    }
+
+
 
 }
 
