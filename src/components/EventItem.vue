@@ -41,7 +41,7 @@ export default {
             <div class="site-event small">
                 {{ event.eventSite }}
             </div>
-            <button>read more</button>
+            <button>read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
         </div>
     </div>
 

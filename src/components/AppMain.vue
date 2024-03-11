@@ -5,6 +5,7 @@ import AppEvents from './AppEvents.vue'
 import AppStats from './AppStats.vue'
 import AppLatestNews from './AppLatestNews.vue'
 import AppCeo from './AppCeo.vue'
+import AppTestimonials from './AppTestimonials.vue'
 
 
 
@@ -16,7 +17,8 @@ export default {
       AppEvents,
       AppStats,
       AppLatestNews,
-      AppCeo
+      AppCeo,
+      AppTestimonials
     },
 
     data(){
@@ -40,6 +42,8 @@ export default {
   <AppEvents></AppEvents>
   <AppStats></AppStats>
   <AppLatestNews></AppLatestNews>
+  <AppTestimonials></AppTestimonials>
+
   
 </main>
 

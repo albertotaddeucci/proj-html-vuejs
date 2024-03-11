@@ -108,6 +108,7 @@ export default {
                     font-weight: bold;
                     margin-bottom: 10px;
                 }
+                
                 hr{
                     width: 100%;
                     margin-bottom: 36px;

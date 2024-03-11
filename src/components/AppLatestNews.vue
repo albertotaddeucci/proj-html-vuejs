@@ -29,13 +29,19 @@ export default {
     <section class="latest">
         <div class="container">
 
+            
             <div class="container-sm">
                 <h2>Latest news</h2>
                 <p>Lorem ipsum dolor sit amet, consecutor</p>
                 <hr>
-            
+                
                 <div class="news-list">
-            
+                    <div class="arrows">
+                        <span><i class="fa-solid fa-arrow-left-long"></i></span>
+                        <span><i class="fa-solid fa-arrow-right-long"></i></span>
+        
+                    </div>
+                    
                     <NewsItem v-for="currentNews in news"
                     :news="currentNews"></NewsItem>
             
@@ -59,14 +65,27 @@ export default {
 .latest{
     padding-block: 130px;
     background-color: $primaryBg;
+
+    .container{
+        position: relative;
+
+    }
     
     
     .container-sm{
-
-
         display: flex;
         flex-direction: column;
         align-items: center;
+        
+        
+        .arrows{
+            position: absolute;
+            top: 60%;
+            left: 0px;
+
+            padding-inline: 20px;
+        }
+
     
 
         hr{
@@ -79,7 +98,9 @@ export default {
             display: flex;
             gap: 30px;
 
-            width: 100%;       
+            width: 100%;  
+            
+            
         
         
         }

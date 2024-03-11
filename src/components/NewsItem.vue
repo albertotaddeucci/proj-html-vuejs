@@ -35,7 +35,7 @@ export default {
         {{ news.title }}
     </div>
     <p>{{ news.text }}</p>
-    <button>read more</button>
+    <button>read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
 
 </div>
 
