@@ -1,7 +1,12 @@
 <script>
 import {store} from '../store.js'
+import AppSpecialties from './AppSpecialties.vue'
 export default {
-    name: "AppMain",    
+    name: "AppMain",  
+    
+    components:{
+      AppSpecialties
+    },
 
     data(){
       return{
@@ -19,7 +24,8 @@ export default {
 <template>
 
 <main>
-  main
+  <AppSpecialties></AppSpecialties>
+  
 </main>
 
 

@@ -1,0 +1,22 @@
+[
+    {
+        "image": "/svg/svg-0.svg",
+        "title": "Knowing",
+        "info": "Lorem ipsum dolor sit amet quis consect."
+    },
+    {
+        "image": "/svg/svg-1.svg",
+        "title": "Selling",
+        "info": "Lorem ipsum dolor sit amet quis consect."
+    },
+    {
+        "image": "/svg/svg-2.svg",
+        "title": "Learning",
+        "info": "Lorem ipsum dolor sit amet quis consect."
+    },
+    {
+        "image": "/svg/svg-3.svg",
+        "title": "Contact",
+        "info": "Lorem ipsum dolor sit amet quis consect."
+    }
+]
