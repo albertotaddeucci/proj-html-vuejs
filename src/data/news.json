@@ -1,0 +1,26 @@
+[
+    {
+        "image": "/img/h1-blog-img-01.jpg",
+        "date": "May 5",
+        "author": "Amanda Doe",
+        "title": "Next investement",
+        "text": "Lorem ipsum",
+        "tag": "Business, Leading"
+    },
+    {
+        "image": "/img/h1-blog-img-02.jpg",
+        "date": "May 5",
+        "author": "Amanda Doe",
+        "title": "Team Building",
+        "text": "Lorem ipsum",
+        "tag": "Business, Leading"
+    },
+    {
+        "image": "/img/h1-blog-img-03.jpg",
+        "date": "May 5",
+        "author": "Amanda Doe",
+        "title": "Next investement",
+        "text": "Lorem ipsum",
+        "tag": "Business, Leading"
+    }
+]

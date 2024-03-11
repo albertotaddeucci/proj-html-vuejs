@@ -1,11 +1,22 @@
 <script>
 import {store} from '../store.js'
 import AppSpecialties from './AppSpecialties.vue'
+import AppEvents from './AppEvents.vue'
+import AppStats from './AppStats.vue'
+import AppLatestNews from './AppLatestNews.vue'
+import AppCeo from './AppCeo.vue'
+
+
+
 export default {
     name: "AppMain",  
     
     components:{
-      AppSpecialties
+      AppSpecialties,
+      AppEvents,
+      AppStats,
+      AppLatestNews,
+      AppCeo
     },
 
     data(){
@@ -25,6 +36,10 @@ export default {
 
 <main>
   <AppSpecialties></AppSpecialties>
+  <AppCeo></AppCeo>
+  <AppEvents></AppEvents>
+  <AppStats></AppStats>
+  <AppLatestNews></AppLatestNews>
   
 </main>
 
