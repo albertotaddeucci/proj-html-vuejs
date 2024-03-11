@@ -29,13 +29,16 @@ export default {
                     <h2>Contact us</h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <hr>
-                    <input type="text" placeholder="name">
-                    <input type="text" placeholder="emil">
-                    <input type="text" placeholder="message">
+                    <div>
+                        <input type="text" placeholder="Your name">
+                        <input type="text" placeholder="Your Email">
 
-                    <button>Send</button>
+                    </div>
+                    <input type="text" placeholder="Write a message ...">
 
-                
+                    <button class="cta">Send</button>
+                    
+                    
                 </div>
             </div>
             <div class="row-clients">
@@ -53,11 +56,16 @@ export default {
 </template>
 
 <style lang="scss">
+@use '../styles/variables' as *;
+
 
 
 #contact-us{
+    background-color:$primaryBg ;
+
     .row{
         display: flex;
+        gap: 60px;
         
         .col-img{
             width: 50%;
@@ -70,15 +78,47 @@ export default {
             width: 50%;
             display: flex;
             flex-direction: column;
+
+            hr{
+                margin-top: 25px;
+                margin-bottom: 20px;
+            }
+
+            div:first-of-type{
+                display: flex;
+                gap: 30px;
+
+                input{
+                    flex-grow: 1;
+                }
+
+            }
+
+            input{
+                margin-top: 20px;
+                padding: 10px;
+
+                border: 0;
+                border-bottom: 1px solid gray ;
+                
+                background-color: transparent;
+                
+            }
+
+            .cta{
+             align-self: flex-start;
+             margin-top: 40px;
+
+            }
         }
     }
 
     .row-clients{
         display: flex;
         justify-content: space-between;
-        img{
-            width: 50px;
-        }
+
+        margin-top: 100px ;
+        
     }
 }
 

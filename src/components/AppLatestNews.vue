@@ -27,21 +27,24 @@ export default {
 <template>
 
     <section class="latest">
+        <div class="container">
 
-        <div class="container-sm">
-            <h2>Latest news</h2>
-            <p>Lorem ipsum dolor sit amet, consecutor</p>
-            <hr>
-        
-            <div class="news-list">
-        
-                <NewsItem v-for="currentNews in news"
-                :news="currentNews"></NewsItem>
-        
-        
-        
+            <div class="container-sm">
+                <h2>Latest news</h2>
+                <p>Lorem ipsum dolor sit amet, consecutor</p>
+                <hr>
+            
+                <div class="news-list">
+            
+                    <NewsItem v-for="currentNews in news"
+                    :news="currentNews"></NewsItem>
+            
+                </div>
             </div>
+
+
         </div>
+
 
 
     </section>
@@ -50,20 +53,40 @@ export default {
 </template>
 
 <style lang="scss">
+@use '../styles/variables' as *;
+
 
 .latest{
-    background-color: grey;
+    padding-block: 130px;
+    background-color: $primaryBg;
+    
+    
+    .container-sm{
 
-    padding-block: 65px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+
+        hr{
+             margin-top: 26px; 
+             margin-bottom: 70px ;
+        }
+    
+
+        .news-list{
+            display: flex;
+            gap: 30px;
+
+            width: 100%;       
+        
+        
+        }
+    }
+    
 }
 
-.news-list{
-    display: flex;
-    gap: 18px;
-
-
-
-}
 
 
 
