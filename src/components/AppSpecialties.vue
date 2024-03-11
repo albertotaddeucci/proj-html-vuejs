@@ -24,7 +24,7 @@ export default {
 
         <div class="container specialties">
             
-            <h2>Our specialties</h2>
+            <h2>Our specialties.</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             <hr>
             <div id="list-specialties">
@@ -84,6 +84,8 @@ section:first-of-type{
         text-align: center;
         .title{
             font-weight: bold;
+        font-family: "Libre Baskerville", serif;
+
         }
 
         .title{

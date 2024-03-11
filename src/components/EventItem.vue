@@ -59,6 +59,7 @@ export default {
     padding: 40px;
     
     border-bottom: 1px solid $colorSecondary;
+
 }
 
 .event-left{
@@ -87,9 +88,12 @@ export default {
     width: 75%;
 
     .event-title{
+        margin-bottom: 20px;
+        
         font-size: 20px;
         font-weight: bold;
-        margin-bottom: 20px;
+        font-family: "Libre Baskerville", serif;
+
     }
     
     .small{

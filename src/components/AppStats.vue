@@ -105,8 +105,14 @@ export default {
                 .info{
                     display: flex;
                     justify-content: space-between;
-                    font-weight: bold;
                     margin-bottom: 10px;
+                    
+                    font-weight: bold;
+
+                    .name{
+                        font-family: "Libre Baskerville", serif;
+
+                    }
                 }
                 
                 hr{

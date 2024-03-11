@@ -132,6 +132,8 @@ export default {
                     
                     color: white;
                     font-weight: bold;
+                    font-family: "Libre Baskerville", serif;
+
                     
                 }
                 
