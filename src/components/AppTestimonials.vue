@@ -66,7 +66,9 @@ export default {
         <div>
             
             <div class="testimonial-list" v-for="testimonial,index in testimonials" >
-                <div class="testimonial" v-show="slideIndex==index" >
+                <div class="testimonial" 
+                :class="slideIndex==index ? 'showing' : ''"
+                 >
                     <img :src="testimonial.image" alt="">
                     <div class="name">{{ testimonial.name }}</div>
                     <p>{{ testimonial.quote }}</p>
@@ -100,6 +102,8 @@ export default {
 #testimonials{
     position: relative;
 
+    height: 580px;
+
     background-color: $secondaryBg;
     .title{
         display: block;
@@ -122,8 +126,12 @@ export default {
             position: relative;
 
             .testimonial{
+                position: absolute;
 
                 padding-block: 130px;
+
+                opacity: 1;
+                transition: opacity 0.5s ease;
 
                 img{
                     height: 120px;
@@ -167,6 +175,10 @@ export default {
                     
                 }
 
+                &:not(.showing){
+                    opacity: 0;
+
+                }
 
             }
         }

@@ -88,6 +88,12 @@ export default {
         padding-top: 8px;
         padding-bottom: 20px;
     }
+
+    button{
+        span{
+            color: $accentColor;
+        }
+    }
 }
 
 

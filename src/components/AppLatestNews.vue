@@ -17,6 +17,17 @@ export default {
         news: newsJson,                            
 
       }
+    },
+
+    methods:{
+        nextImg(){
+            const cardWidth = this.$refs.myScrollTarget.offsetWidth + 20;
+            this.$refs.myScrollTarget.scrollleft += cardWidth;
+        },
+        prevImg(){
+            const cardWidth = this.$refs.myScrollTarget.offsetWidth + 20;
+            this.$refs.myScrollTarget.scrollleft += cardWidth;
+        }
     }
 }
 
@@ -37,8 +48,8 @@ export default {
                 
                 <div class="news-list">
                     <div class="arrows">
-                        <span><i class="fa-solid fa-arrow-left-long"></i></span>
-                        <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        <span class="next" @click="nextImg()"><i class="fa-solid fa-arrow-left-long"></i></span>
+                        <span class="prev" @click="prevImg()"><i class="fa-solid fa-arrow-right-long"></i></span>
         
                     </div>
                     
@@ -69,8 +80,7 @@ export default {
     .container{
         position: relative;
 
-    }
-    
+    }    
     
     .container-sm{
         display: flex;
@@ -93,15 +103,17 @@ export default {
              margin-bottom: 70px ;
         }
     
+        // scroll-snap-type: x mandatory;
+        // overflow: hidden;
+        // scroll-behavior: smooth;
+        // scrollbar-width: thin;
+        // scrollbar-color: transparent;
 
         .news-list{
             display: flex;
             gap: 30px;
 
-            width: 100%;  
             
-            
-        
         
         }
     }

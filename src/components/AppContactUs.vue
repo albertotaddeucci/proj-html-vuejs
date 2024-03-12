@@ -75,7 +75,7 @@ export default {
 
                     </div>
                     <input type="text" placeholder="Write a message ...">
-
+                    
                     <button class="cta-secondary"><div>send</div><span><i class="fa-solid fa-arrow-right-long"></i></span></button>
                     
                     
@@ -144,12 +144,13 @@ export default {
                         top: 0;
                         transform: translateY(30px);
 
+                        display: none;
+
                         width: 270px;
 
                         padding: 24px;
 
                         background-color: white;
-                        opacity: 0;
                         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
                         .label-event{
@@ -160,7 +161,7 @@ export default {
                         }
 
                         &.show{
-                            opacity: 1;
+                            display: block;
                         }
 
                     }
@@ -202,7 +203,7 @@ export default {
             }
 
             .cta-secondary{
-             align-self: flex-start;
+             align-self: start;
              margin-top: 40px;
 
             }
