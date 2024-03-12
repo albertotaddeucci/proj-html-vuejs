@@ -1,5 +1,7 @@
 import { reactive } from 'vue'
 import specialtiesJson from './data/specialties.json'
+import eventsJson from './data/events.json'
+
 
 export const store = reactive({
 

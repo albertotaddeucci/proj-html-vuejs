@@ -15,6 +15,29 @@ export default {
 
       }
     },
+    methods:{
+        getDay(date){
+            const myDate = luxon.DateTime.fromISO(date);
+
+            return myDate.day
+           
+        },
+        getDateFull(date){
+            const myDate = luxon.DateTime.fromISO(date);
+
+            
+            return myDate.setLocale('en-US').toLocaleString(luxon.DateTime.DATE_MED)
+           
+        },
+        getMonth(date){
+            const myDate = luxon.DateTime.fromISO(date);
+
+            
+            return myDate.setLocale('en-US').toLocaleString({ month: 'short', year: 'numeric' }) 
+           
+
+        }
+    }
 
     
 }
@@ -28,8 +51,8 @@ export default {
         <div class="event-left">
             <div class="square">
 
-                <div class="day">07</div>
-                <div class="month">Jan 2022</div>
+                <div class="day">{{ getDay(event.eventDate) }}</div>
+                <div class="month">{{ getMonth(event.eventDate) }}</div>
 
             </div>
         </div>
@@ -38,7 +61,7 @@ export default {
                 {{ event.eventTitle }}
             </div>
             <div class="time-event small">
-                {{ event.eventDuration }}, {{ event.eventDate }}
+                {{ event.eventDuration }}, {{getDateFull(event.eventDate)}}
             </div>
             <div class="site-event small">
                 {{ event.eventSite }}

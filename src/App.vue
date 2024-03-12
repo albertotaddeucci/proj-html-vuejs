@@ -25,17 +25,6 @@ export default {
         }
     },
 
-    created(){
-      // store.eventsJson[1].eventDate
-
-      // var DateTime = luxon.DateTime;
-
-      // DateTime.now().toString()
-
-      // console.log()
-      
-      
-    }
 }
 
 </script>

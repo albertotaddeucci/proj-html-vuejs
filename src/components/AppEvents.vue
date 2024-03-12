@@ -12,18 +12,12 @@ export default {
     data(){
       return{
         store,
-        events: eventsJson,
-
-                               
+        events: eventsJson,                               
 
       }
     },
 
-    methods:{
-        getDateFull(){
-            store.eventsJson[1].eventDate
-        }
-    }
+    
 }
 
 </script>
