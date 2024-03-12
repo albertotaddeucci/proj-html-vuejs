@@ -76,7 +76,7 @@ export default {
                     </div>
                     <input type="text" placeholder="Write a message ...">
 
-                    <button class="cta-secondary">Send</button>
+                    <button class="cta-secondary"><div>send</div><span><i class="fa-solid fa-arrow-right-long"></i></span></button>
                     
                     
                 </div>

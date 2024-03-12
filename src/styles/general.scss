@@ -75,7 +75,6 @@ hr {
 }
 
 button {
-    // background-color: red;
     display: flex;
     padding-block: 10px;
     border: 0;
@@ -99,14 +98,36 @@ button {
 }
 
 .cta-primary {
-    padding: 22px 38px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-inline: 20px;
     background-color: white;
+
+
+    div {
+
+        padding: 10px;
+        border-right: 1px solid black;
+
+
+    }
 }
 
 .cta-secondary {
-    padding: 22px 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
     background-color: $accentColor;
     color: white;
+
+    div {
+        padding: 10px;
+        border-right: 1px solid white;
+
+
+    }
 
 
 }

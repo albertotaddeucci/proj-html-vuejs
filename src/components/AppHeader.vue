@@ -12,6 +12,9 @@ export default {
       return{
         store,
 
+        linkActive:true,
+        activeIndex: 0,
+
 
         slidesJumbo:[
           {
@@ -68,9 +71,28 @@ export default {
           <img src="/public/img/logo-img-01.png" alt="">
         </div>
         <ul>
-          <li v-for="link in navLinks">
-            {{ link }}
+          <li v-for="link,index in navLinks">
+
+            <span :class="this.linkActive==true && index==this.activeIndex? 'active':''">
+              <i 
+              v-show="this.linkActive==true && index==this.activeIndex"             
+              class="fa-solid fa-arrow-right-long" >
+              </i>
+
+              <span>
+                {{ link }}
+
+              </span>
+    
+
+            </span>
+
+
           </li>
+
+          <li><span><i class="fa-solid fa-magnifying-glass"></i></span></li>
+          <li><span><i class="fa-solid fa-list"></i></span></li>
+
         </ul>
       </nav>
 
@@ -88,8 +110,8 @@ export default {
           <h1>{{ currentSlide.title }}</h1>
           <p>{{ currentSlide.text }}</p>
           <div class="buttons">
-            <button class="cta-primary">read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
-            <button class="cta-secondary">purchase <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
+            <button class="cta-primary"><div>read more</div> <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
+            <button class="cta-secondary"><div>purchase </div><span><i class="fa-solid fa-arrow-right-long"></i></span></button>
           </div>
           
         </div>
@@ -113,6 +135,7 @@ export default {
 </template>
 
 <style lang="scss">
+@use '../styles/variables' as *;
 
 
 
@@ -136,12 +159,7 @@ export default {
       display: flex;
       gap: 20px;
 
-      button{
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-                
-      }
+     
     }
   }
 
@@ -189,10 +207,34 @@ nav{
   ul{
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 45px;
 
     text-transform: uppercase;
-    font-weight: bold  ;
+    font-weight: bold ;
+
+    li{
+      position: relative;
+      
+
+      span:hover{
+        color: $accentColor;
+       cursor: pointer;
+      }
+
+      i{
+        position: absolute;
+        top: 0;
+        left: 0%;
+
+        transform: translate(-100%);
+
+        padding-right: 5px;
+      }
+      
+      .active{
+        color: $accentColor;
+      }
+    }
   }
 }
 

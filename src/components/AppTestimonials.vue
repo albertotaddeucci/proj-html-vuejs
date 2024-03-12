@@ -105,11 +105,13 @@ export default {
         display: block;
         position: absolute;
         left: 50%;
-        top: -5%;
+        top: -3%;
         transform: translateX(-50%);
 
         font-size: 180px ;
         font-weight: bold;
+        font-family: "Libre Baskerville", serif;
+
     }
 
     .container{
