@@ -17,6 +17,12 @@ export default {
                                
 
       }
+    },
+
+    methods:{
+        getDateFull(){
+            store.eventsJson[1].eventDate
+        }
     }
 }
 
