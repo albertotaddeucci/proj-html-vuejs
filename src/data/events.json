@@ -3,18 +3,21 @@
         "eventTitle": "Melbourne Coaching",
         "eventDuration": "9:00 am - 5.00 pm",
         "eventDate": "2022-01-07",
-        "eventSite": "Cambridge, MA 02138, USA"
+        "eventSite": "Cambridge, MA 02138, USA",
+        "eventLocation": "Melbourne"
     },
     {
         "eventTitle": "New York Coaching",
         "eventDuration": "9:00 am - 5.00 pm",
         "eventDate": "2022-01-11",
-        "eventSite": "Cambridge, MA 02138, USA"
+        "eventSite": "Cambridge, MA 02138, USA",
+        "eventLocation": "New York"
     },
     {
         "eventTitle": "London Coaching",
         "eventDuration": "9:00 am - 5.00 pm",
         "eventDate": "2022-01-21",
-        "eventSite": "Cambridge, MA 02138, USA"
+        "eventSite": "Cambridge, MA 02138, USA",
+        "eventLocation": "London"
     }
 ]

@@ -82,8 +82,8 @@ export default {
           <h1>{{ currentSlide.title }}</h1>
           <p>{{ currentSlide.text }}</p>
           <div class="buttons">
-            <button>read more</button>
-            <button>purchase</button>
+            <button class="cta-primary">read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
+            <button class="cta-secondary">purchase <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
           </div>
           
         </div>
@@ -109,6 +109,7 @@ export default {
 <style lang="scss">
 
 
+
 #jumbo{
   height: 880px;
   position: relative;
@@ -116,17 +117,25 @@ export default {
   background-size: cover;
 
   .jumbo-info{
-    position: absolute;
-    top: 50%;
+    position: absolute; 
+    top: 45%;
     left: 20%;
     
     p{
       width: 55ch;
+      margin-bottom: 45px;
     }
     
     .buttons{
       display: flex;
-      gap: 10px;
+      gap: 20px;
+
+      button{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+                
+      }
     }
   }
 

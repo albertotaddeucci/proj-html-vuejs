@@ -7,6 +7,8 @@ export const store = reactive({
 
     specialties: specialtiesJson,
 
+    events: eventsJson,
+
     navbarLinks: [
         "home",
         "pages",

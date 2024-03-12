@@ -63,12 +63,14 @@ export default {
 }
 
 .event-list{
-    width: 520px;
+    max-width: 520px;
 
     background-color: white;
 
     h3{
         padding: 30px 45px;
+
+        font-size: 28px;
         
         background-color: #fafafa;
         border-bottom: 1px solid #e1e1e1;

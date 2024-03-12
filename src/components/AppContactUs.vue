@@ -5,10 +5,25 @@ export default {
 
     data(){
       return{
-        store,                               
+        store, 
+        following: false,
+        mouseX: 0,
+        mouseY: 0,                              
 
       }
-    }
+    },
+    // methods:{
+    //     startFollowing() {
+    //         this.following = true;
+    //         console.log("follow")
+    //     },
+    //     updatePosition() {
+    //     if (this.following) {
+    //         this.mouseX = clientX;
+    //         this.mouseY = clientY;
+    //     }
+    //     }
+    // }
 }
 
 </script>
@@ -23,6 +38,26 @@ export default {
             <div class="row">
                 <div class="col-img">
                     <img src="/img/h1-contact-rev-01.png" alt="">
+                    <div class="red-dots" v-for="event in store.events">
+                        <div 
+                        class="red"
+                        :class="event.eventLocation.includes('Melbourne') ?'mb': 
+                                event.eventLocation.includes('London') ? 'ln':
+                                event.eventLocation.includes('New York') ? 'ny': ''"
+                        >
+
+                            <img src="/img/h1-contact-rev-02.png" alt=""  >
+
+                            
+                            <!-- <div class="info-box" @mousemove="updatePosition" @mouseenter="startFollowing">
+                                ciao
+                            </div> -->
+                            
+                        </div>
+                        
+
+
+                    </div>
 
                 </div>
                 <div class="contact-info">
@@ -36,7 +71,7 @@ export default {
                     </div>
                     <input type="text" placeholder="Write a message ...">
 
-                    <button class="cta">Send</button>
+                    <button class="cta-secondary">Send</button>
                     
                     
                 </div>
@@ -62,6 +97,7 @@ export default {
 
 #contact-us{
     background-color:$primaryBg ;
+    padding-block: 130px;
 
     .row{
         display: flex;
@@ -69,8 +105,41 @@ export default {
         
         .col-img{
             width: 50%;
+            position: relative;
             img{
                 width: 100%;
+            }
+
+            .red-dots{
+                img{
+                    width: 25px ;
+                    cursor: pointer;
+                }
+                .red{
+                    position: absolute;
+
+                    &.ny{
+                    top: 33%;
+                    left: 23%;
+                    }
+
+                    &.ln{
+                        top: 20%;
+                        left: 51%;
+                    }
+
+                    &.mb{
+                        top: 68%;
+                        left: 83%;
+                    }
+                    
+                    .info-box{
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+                
+
             }
         }
 
@@ -105,7 +174,7 @@ export default {
                 
             }
 
-            .cta{
+            .cta-secondary{
              align-self: flex-start;
              margin-top: 40px;
 
