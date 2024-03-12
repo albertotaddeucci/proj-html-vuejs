@@ -69,7 +69,10 @@ export default {
 
     h3{
         padding: 30px 45px;
-        border-bottom: 1px solid grey;
+        
+        background-color: #fafafa;
+        border-bottom: 1px solid #e1e1e1;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
 
 

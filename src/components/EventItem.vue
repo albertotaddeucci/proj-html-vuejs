@@ -61,10 +61,10 @@ export default {
                 {{ event.eventTitle }}
             </div>
             <div class="time-event small">
-                {{ event.eventDuration }}, {{getDateFull(event.eventDate)}}
+               <span><i class="fa-regular fa-clock"></i></span> {{ event.eventDuration }}, {{getDateFull(event.eventDate)}}
             </div>
             <div class="site-event small">
-                {{ event.eventSite }}
+                <span><i class="fa-solid fa-location-dot"></i></span> {{ event.eventSite }}
             </div>
             <button>read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
         </div>
@@ -83,7 +83,16 @@ export default {
 
     padding: 40px;
     
-    border-bottom: 1px solid $colorSecondary;
+    border-bottom: 1px solid #e1e1e1;
+    background-color: #fafafa;
+
+    &:hover{
+        background-color: white;
+        cursor: pointer;
+        .event-title{
+            color: $accentColor;
+        }
+    }
 
 }
 
@@ -99,13 +108,17 @@ export default {
         padding: 12px;
 
         color: white;
-        background-color: red;
+        background-color: $accentColor;
 
         .day{
+            font-size: 20px;
             font-weight: bold;
-
+    
+            font-family:"Libre Baskerville", serif ;
 
         }
+
+        
     }
 }
 
@@ -128,8 +141,16 @@ export default {
     }
 
     span{
-        text-transform: uppercase;
-        font-weight: bold;
+        color: $accentColor;
+        margin-right: 5px;
+    }
+
+    button{
+        
+        span{
+            text-transform: uppercase;
+            font-weight: bold;
+        }
     }
 }
 
