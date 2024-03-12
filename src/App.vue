@@ -5,6 +5,8 @@ import AppContactUs from './components/AppContactUs.vue'
 import AppFooter from './components/AppFooter.vue'
 
 import {store} from './store.js'
+import {footerData} from './data/footerData.js'
+
 
 
 
@@ -20,6 +22,8 @@ export default {
     data() {
         return {
             store,
+            footerData                              
+
 
             
         }
@@ -30,10 +34,16 @@ export default {
 </script>
 
 <template>
-  <AppHeader></AppHeader>
+  <AppHeader 
+    :navLinks="store.navbarLinks">
+  </AppHeader>
   <AppMain></AppMain>
   <AppContactUs></AppContactUs>
-  <AppFooter></AppFooter>
+  <AppFooter 
+    :comments="footerData.twComments"
+    :impLinks="footerData.importantLinks"
+    :contacts="footerData.contactList">
+  </AppFooter>
 
 
 </template>

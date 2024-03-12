@@ -1,29 +1,32 @@
 <script>
 import {store} from '../store.js'
 export default {
-    name: "AppContactUs",    
+    name: "AppContactUs",   
+    
+    labelIndex: '',
 
     data(){
       return{
         store, 
-        following: false,
-        mouseX: 0,
-        mouseY: 0,                              
+        infoShow: false                                     
 
       }
     },
-    // methods:{
-    //     startFollowing() {
-    //         this.following = true;
-    //         console.log("follow")
-    //     },
-    //     updatePosition() {
-    //     if (this.following) {
-    //         this.mouseX = clientX;
-    //         this.mouseY = clientY;
-    //     }
-    //     }
-    // }
+    methods: {
+        showLabel(index){
+            this.infoShow=true   
+            this.labelIndex=index        
+
+
+        },
+        hideLabel(index){
+            this.infoShow=false
+
+
+        }
+        
+    }
+    
 }
 
 </script>
@@ -38,24 +41,26 @@ export default {
             <div class="row">
                 <div class="col-img">
                     <img src="/img/h1-contact-rev-01.png" alt="">
-                    <div class="red-dots" v-for="event in store.events">
+                    <div class="red-dots" v-for="event,index in store.events">
                         <div 
                         class="red"
                         :class="event.eventLocation.includes('Melbourne') ?'mb': 
                                 event.eventLocation.includes('London') ? 'ln':
                                 event.eventLocation.includes('New York') ? 'ny': ''"
                         >
-
-                            <img src="/img/h1-contact-rev-02.png" alt=""  >
-
                             
-                            <!-- <div class="info-box" @mousemove="updatePosition" @mouseenter="startFollowing">
-                                ciao
-                            </div> -->
+                            <img src="/img/h1-contact-rev-02.png" alt="" @mouseenter="showLabel(index)" @mouseleave="hideLabel(index)">
                             
+                            
+                            <div class="info-box" :class="this.infoShow==true && index==this.labelIndex ? 'show':''">
+                                <div class="label-event">
+                                    {{ event.eventTitle }}
+                                </div>
+                                <button>read more</button>
+                            </div>
                         </div>
                         
-
+                        
 
                     </div>
 
@@ -118,6 +123,7 @@ export default {
                 .red{
                     position: absolute;
 
+                    
                     &.ny{
                     top: 33%;
                     left: 23%;
@@ -136,6 +142,27 @@ export default {
                     .info-box{
                         position: absolute;
                         top: 0;
+                        transform: translateY(30px);
+
+                        width: 270px;
+
+                        padding: 24px;
+
+                        background-color: white;
+                        opacity: 0;
+                        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                        .label-event{
+                            font-size: 18px;
+                            font-weight: bold;
+                            font-family: "Libre Baskerville", serif;
+
+                        }
+
+                        &.show{
+                            opacity: 1;
+                        }
+
                     }
                 }
                 
@@ -190,5 +217,6 @@ export default {
         
     }
 }
+
 
 </style>

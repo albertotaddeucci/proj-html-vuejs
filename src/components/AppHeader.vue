@@ -2,10 +2,16 @@
 import {store} from '../store.js'
 export default {
     name: "AppHeader",    
+    
+    props:{
+      navLinks: Array
+
+    },
 
     data(){
       return{
         store,
+
 
         slidesJumbo:[
           {
@@ -62,7 +68,7 @@ export default {
           <img src="/public/img/logo-img-01.png" alt="">
         </div>
         <ul>
-          <li v-for="link in store.navbarLinks">
+          <li v-for="link in navLinks">
             {{ link }}
           </li>
         </ul>

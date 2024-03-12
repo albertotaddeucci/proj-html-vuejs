@@ -60,9 +60,13 @@ export default {
                             {{ stat.percentage }}
                         </div>
                     </div>
+
                     <div class="bar">
-                        <hr>
+                        <div class="bar-full" :style="{ width: stat.percentage}"></div>
                     </div>
+
+                    
+                    
                 </div>
                 
                 
@@ -79,6 +83,9 @@ export default {
 </template>
 
 <style lang="scss">
+@use '../styles/variables' as *;
+
+
 #stats{
 
     .row{
@@ -100,6 +107,7 @@ export default {
     
         .col-right{
             width: 50%;
+
             .stat{
     
                 .info{
@@ -115,9 +123,17 @@ export default {
                     }
                 }
                 
-                hr{
+                .bar{
                     width: 100%;
+                    height: 2px;
                     margin-bottom: 36px;
+
+                    background-color: rgb(213, 207, 207);
+
+                    .bar-full{
+                        height:4px;
+                        background-color: $accentColor
+                    }
                 }
             }
     

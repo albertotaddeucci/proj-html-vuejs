@@ -1,5 +1,6 @@
 <script>
 import {store} from '../store.js'
+import { DateTime } from "luxon"
 
 export default {
     name: "EventItem",  
@@ -17,20 +18,20 @@ export default {
     },
     methods:{
         getDay(date){
-            const myDate = luxon.DateTime.fromISO(date);
+            const myDate = DateTime.fromISO(date);
 
             return myDate.day
            
         },
         getDateFull(date){
-            const myDate = luxon.DateTime.fromISO(date);
+            const myDate = DateTime.fromISO(date);
 
             
-            return myDate.setLocale('en-US').toLocaleString(luxon.DateTime.DATE_MED)
+            return myDate.setLocale('en-US').toLocaleString(DateTime.DATE_MED)
            
         },
         getMonth(date){
-            const myDate = luxon.DateTime.fromISO(date);
+            const myDate = DateTime.fromISO(date);
 
             
             return myDate.setLocale('en-US').toLocaleString({ month: 'short', year: 'numeric' }) 

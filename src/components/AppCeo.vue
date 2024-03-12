@@ -159,30 +159,7 @@ export default {
         margin-block: 20px  ;
     }
 
-    .social-icons{
-        display: flex;
-        gap: 10px;
-
-        margin-top: 20px;
-        span{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: red;
-            height: 25px;
-            aspect-ratio: 1;
-
-            border-radius: 50%;
-            color: white;
-            
-            &:hover{
-                background-color: black;
-                cursor: pointer;
-                
-            }
-        }
-
-    }
+    
 }
 
 </style>
