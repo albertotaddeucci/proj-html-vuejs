@@ -34,7 +34,7 @@ export default {
             <img class="img-bg" src="/public/svg/svg-4.svg" alt="">
 
             
-            <div class="container-sm" ref="myScrollTarget">
+            <div class="container-sm">
                 <h2>Latest news<span class="dot">.</span></h2>
                 <p>Lorem ipsum dolor sit amet, consecutor</p>
                 <hr>
@@ -86,6 +86,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        
 
         .arrows{
             position: absolute;
