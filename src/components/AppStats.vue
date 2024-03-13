@@ -14,25 +14,27 @@ export default {
         prova2:'',
         stop: 50,
 
-        id: setInterval(this.frame,100),
+        scrolledPastTriggerPoint: false,
+
+        id: '',
 
 
         stats: [
             {
                 name: "Mentorship",
-                percentage: "78"
+                percentage: "78%"
             },
             {
                 name: "Education",
-                percentage: "95"
+                percentage: "95%"
             },
             {
                 name: "Learning",
-                percentage: "65"
+                percentage: "65%"
             },
             {
                 name: "Motivation",
-                percentage: "83"
+                percentage: "83%"
             },
         ]
 
@@ -44,8 +46,7 @@ export default {
         
         frame() {              
             
-            
-            if (this.width >= this.stop) {
+            if (this.width >= 100 ) {
                 clearInterval(this.id);
                 this.prova = this.prova2
                 return
@@ -55,15 +56,28 @@ export default {
                 this.width++; 
                 this.prova2 = this.width + '%';                
                 this.prova = this.prova2
+                this.label = this.width + '%'
             }
+            
+            
 
         },
-        stopClick(num){
-            console.log(num)
-            this.stop=num
-        }
+
+        onScroll() {
+            const scrollTop = window.scrollY;
+            const triggerPoint = 2000; 
+            
+            if (scrollTop >= triggerPoint && !this.scrolledPastTriggerPoint) {
+                this.scrolledPastTriggerPoint = true;
+                this.$emit("scrolled-past-trigger-point");
+                this.id=setInterval(this.frame,40)
+            }
+        },
         
-    }
+    },
+    mounted() {
+        window.addEventListener("scroll", this.onScroll);
+    },
 }
 
 </script>
@@ -81,12 +95,12 @@ export default {
                 <h3>Creative Leader</h3>
                 <hr>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa minima unde numquam nesciunt fuga atque? Libero, architecto ipsum! Est numquam assumenda voluptates voluptatum itaque sit sequi. Repudiandae perspiciatis qui incidunt!</p>
-                <button>read more</button>
+                <button>read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
             </div>
             <div class="col-right"  >
                 <div  class="stat" v-for="stat in stats">
                     <div class="info" >
-                        <div class="name" @click="stopClick(stat.percentage)">
+                        <div class="name">
                             {{stat.name}}
                         </div>
                         <div class="num">
@@ -95,10 +109,12 @@ export default {
                     </div>
 
                     <div class="bar"  >
-                        <div class="bar-full" :style="{ width: this.prova}"></div>
+                        <div class="control-bar" :style="{ width: stat.percentage}">
+                            <div class="bar-full" :style="{ width: this.prova}"></div>
+                        </div>
                     </div>
 
-                    <!-- { width: stat.percentage} -->
+                    
 
                     
                     
@@ -137,6 +153,11 @@ export default {
     
             button{
                 margin-top: 30px;
+                &:hover{
+                    span{
+                        color: $accentColor;
+                    }
+                }
             }
         }
     
@@ -165,11 +186,15 @@ export default {
 
                     background-color: rgb(213, 207, 207);
 
-                    .bar-full{
-                        height:4px;
-                        background-color: $accentColor;
-                        width: 30%;
+                    .control-bar{
+                        
+                        .bar-full{
+                            height:4px;
+                            background-color: $accentColor;
+                            width: 30%;
+                        }
                     }
+
                 }
             }
     

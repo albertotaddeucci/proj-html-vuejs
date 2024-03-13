@@ -65,7 +65,7 @@ export default {
                     </div>
 
                     <div class="btns">
-
+                        
                         <span @click="this.slideLeft">
                             <i class="fa-solid fa-arrow-left-long"></i>
                         </span>
@@ -128,16 +128,27 @@ export default {
         left: 0;
 
         display: flex;
-        gap: 20px;
+        // gap: 10px;
 
-        padding: 25px ;
-
+        
         background-color: $accentColor;
         color: white;
 
+        
         span{
+            padding: 20px ;
             cursor: pointer;
+
+            &:hover{
+    
+                i{
+                    scale: 1.1;
+                }
+            }
         }
+
+
+
     }
 }
 
@@ -151,7 +162,7 @@ export default {
 
     padding: 90px 50px;
     
-    margin-block: 60px;
+    margin-block: 50px;
 
     background-color: white ;
 

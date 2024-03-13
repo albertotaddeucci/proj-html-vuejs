@@ -89,7 +89,7 @@ export default {
 
     &:hover{
         background-color: white;
-        cursor: pointer;
+        
         .event-title{
             color: $accentColor;
         }
