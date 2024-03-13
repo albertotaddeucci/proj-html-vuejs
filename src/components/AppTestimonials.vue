@@ -27,7 +27,7 @@ export default {
             
         ],
 
-
+        slideIndex: 0,
         
         playerIndex:0,
         playerOn: false
