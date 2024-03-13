@@ -25,11 +25,11 @@ export default {
 <div class="news">
     <div class="image-news">
         <img :src="news.image" alt="">
-        <div class="tag">{{ news.tag }}</div>
+        <div class="tag"><i class="fa-solid fa-tag"></i>{{ news.tag }}</div>
     </div>
-    <div>
-        <span class="small"> {{news.date}}</span>
-        <span class="small"> {{news.author}}</span>
+    <div class="author">
+        <span class="small"><i class="fa-regular fa-clock"></i> {{news.date}}</span>
+        <span class="small"><i class="fa-regular fa-user"></i> {{news.author}}</span>
     </div>
     <div class="title">
         {{ news.title }}
@@ -50,12 +50,26 @@ export default {
     .image-news{
         position: relative;
         margin-bottom: 35px;
+        i{
+            margin-right: 5px;
+        }
     }
     img{
         width: 100%;
         object-fit: cover;
         display: block;
 
+    }
+
+    .author{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        i{
+            color: $accentColor;
+            font-size: 13px;
+            margin-right: 2px;
+        }
     }
 
     .tag{

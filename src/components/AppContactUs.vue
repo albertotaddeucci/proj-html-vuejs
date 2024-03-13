@@ -74,7 +74,7 @@ export default {
                         <input type="text" placeholder="Your Email">
 
                     </div>
-                    <input type="text" placeholder="Write a message ...">
+                    <textarea type="textarea" placeholder="Write a message ..."></textarea>
                     
                     <button class="cta-secondary"><div>send</div><span><i class="fa-solid fa-arrow-right-long"></i></span></button>
                     
@@ -125,17 +125,17 @@ export default {
 
                     
                     &.ny{
-                    top: 33%;
+                    top: 25%;
                     left: 23%;
                     }
 
                     &.ln{
-                        top: 20%;
+                        top: 16%;
                         left: 51%;
                     }
 
                     &.mb{
-                        top: 68%;
+                        top: 53%;
                         left: 83%;
                     }
                     
@@ -202,6 +202,19 @@ export default {
                 
             }
 
+            textarea{
+
+                padding: 30px 10px;
+                padding-bottom: 60px;
+
+                border: 0;
+
+                border-bottom: 1px solid gray ;
+                background-color: transparent;
+
+
+            }
+
             .cta-secondary{
              align-self: start;
              margin-top: 40px;
@@ -215,6 +228,15 @@ export default {
         justify-content: space-between;
 
         margin-top: 100px ;
+
+        .client{
+            img{
+                &:hover{
+                    cursor: pointer;
+                    filter: invert(39%) sepia(68%) saturate(4370%) hue-rotate(352deg) brightness(100%) contrast(102%);;
+                }
+            }
+        }
         
     }
 }

@@ -59,37 +59,37 @@ export default {
 <template>
   <section id="testimonials">
 
-    <div class="container">
+        <div class="container">
 
-        <span class="title">Testimonials.</span>
-        
-        <div>
+            <span class="title">Testimonials.</span>
             
-            <div class="testimonial-list" v-for="testimonial,index in testimonials" >
-                <div class="testimonial" 
-                :class="slideIndex==index ? 'showing' : ''"
-                 >
-                    <img :src="testimonial.image" alt="">
-                    <div class="name">{{ testimonial.name }}</div>
-                    <p>{{ testimonial.quote }}</p>
-    
-                    <div class="arrows">
-                        <span @click="this.slideLeft"><i class="fa-solid fa-arrow-left-long"></i></span>
-                        <span @click="this.slideRight"><i class="fa-solid fa-arrow-right-long"></i></span>
+            <div>
+                
+                <div class="testimonial-list" v-for="testimonial,index in testimonials" >
+                    <div class="testimonial" 
+                    :class="slideIndex==index ? 'showing' : ''"
+                    >
+                        <img :src="testimonial.image" alt="">
+                        <div class="name">{{ testimonial.name }}</div>
+                        <p>{{ testimonial.quote }}</p>
+        
                         
-                    </div>
-                    
-                    <div class="slider-count">
-                        <div>0{{index+1}}</div>
-                        <div><hr></div>
-                        <div>0{{testimonials.length}}</div>
+                        <div class="slider-count">
+                            <div>0{{index+1}}</div>
+                            <div><hr></div>
+                            <div>0{{testimonials.length}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <div class="arrows">
+                <span @click="this.slideLeft"><i class="fa-solid fa-arrow-left-long"></i></span>
+                <span @click="this.slideRight"><i class="fa-solid fa-arrow-right-long"></i></span>
+                
+            </div>
         </div>
-
-    </div>
-
+        
 
   </section>
 
@@ -117,16 +117,29 @@ export default {
         font-family: "Libre Baskerville", serif;
 
     }
-
+    
+    
     .container{
         position: relative;
         text-align: center;
+        
+        .arrows{
+            position: absolute;
+            top: 290px;
+            left: 0;
+    
+            padding-inline: 20px;
+    
+            color: white;
+        }
 
         .testimonial-list{
-            position: relative;
 
             .testimonial{
                 position: absolute;
+                top: 0;
+                right: 50%;
+                transform: translate(50%);
 
                 padding-block: 130px;
 
@@ -152,15 +165,6 @@ export default {
                     margin-inline: auto;
                 }
     
-                .arrows{
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-    
-                    padding-inline: 20px;
-    
-                    color: white;
-                }
 
                 .slider-count{
                     display: flex;
