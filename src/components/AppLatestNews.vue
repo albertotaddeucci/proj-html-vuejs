@@ -19,16 +19,7 @@ export default {
       }
     },
 
-    methods:{
-        nextImg(){
-            const cardWidth = this.$refs.myScrollTarget.offsetWidth + 20;
-            this.$refs.myScrollTarget.scrollleft += cardWidth;
-        },
-        prevImg(){
-            const cardWidth = this.$refs.myScrollTarget.offsetWidth + 20;
-            this.$refs.myScrollTarget.scrollleft += cardWidth;
-        }
-    }
+  
 }
 
 </script>
@@ -40,16 +31,18 @@ export default {
     <section class="latest">
         <div class="container">
 
+            <img class="img-bg" src="/public/svg/svg-4.svg" alt="">
+
             
-            <div class="container-sm">
+            <div class="container-sm" ref="myScrollTarget">
                 <h2>Latest news</h2>
                 <p>Lorem ipsum dolor sit amet, consecutor</p>
                 <hr>
                 
                 <div class="news-list">
                     <div class="arrows">
-                        <span class="next" @click="nextImg()"><i class="fa-solid fa-arrow-left-long"></i></span>
-                        <span class="prev" @click="prevImg()"><i class="fa-solid fa-arrow-right-long"></i></span>
+                        <span ><i class="fa-solid fa-arrow-left-long"></i></span>
+                        <span ><i class="fa-solid fa-arrow-right-long"></i></span>
         
                     </div>
                     
@@ -80,14 +73,20 @@ export default {
     .container{
         position: relative;
 
+        .img-bg{
+            position: absolute;
+            top: -225px;
+            left: 0;
+        }
+
+        
     }    
     
     .container-sm{
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-        
+
         .arrows{
             position: absolute;
             top: 60%;
@@ -97,17 +96,12 @@ export default {
         }
 
     
-
         hr{
              margin-top: 26px; 
              margin-bottom: 70px ;
         }
-    
-        // scroll-snap-type: x mandatory;
-        // overflow: hidden;
-        // scroll-behavior: smooth;
-        // scrollbar-width: thin;
-        // scrollbar-color: transparent;
+
+
 
         .news-list{
             display: flex;

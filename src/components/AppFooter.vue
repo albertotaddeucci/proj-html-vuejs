@@ -123,6 +123,8 @@ footer{
   background-color: black;
   color: $colorSecondary;
 
+  font-size: 14px;
+
   h5{
     color: white;
   }

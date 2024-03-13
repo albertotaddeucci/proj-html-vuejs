@@ -9,6 +9,7 @@ import AppTestimonials from './AppTestimonials.vue'
 
 
 
+
 export default {
     name: "AppMain",  
     
@@ -18,7 +19,7 @@ export default {
       AppStats,
       AppLatestNews,
       AppCeo,
-      AppTestimonials
+      AppTestimonials,
     },
 
     data(){
@@ -41,7 +42,7 @@ export default {
   <AppCeo></AppCeo>
   <AppEvents></AppEvents>
   <AppStats></AppStats>
-  <AppLatestNews></AppLatestNews>
+  <AppLatestNews></AppLatestNews>  
   <AppTestimonials></AppTestimonials>
 
   
@@ -52,5 +53,6 @@ export default {
 </template>
 
 <style lang="scss">
+
 
 </style>

@@ -34,6 +34,15 @@ export default {
 </script>
 
 <template>
+  <div id="fixed">
+    <div class="box explore">
+      <img src="/svg/svg-8.svg" alt="">
+    </div>
+    <div class="box shop">
+      <img src="/svg/svg-7.svg" alt="">
+      
+    </div>
+  </div>
   <AppHeader 
     :navLinks="store.navbarLinks">
   </AppHeader>
@@ -50,5 +59,47 @@ export default {
 
 <style lang="scss">
 @use './styles/general.scss' as *;
+
+#fixed{
+  position: fixed;
+  top: 20%;
+  right: 0;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  
+
+  .box{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+  }
+
+  .explore{
+    background-color: #ee2852 ;
+    img{
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(326deg) brightness(150%) contrast(101%);
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+  .shop{
+    background-color: white;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
+
+
+}
 
 </style>

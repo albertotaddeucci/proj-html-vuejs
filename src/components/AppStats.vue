@@ -103,8 +103,6 @@ export default {
 
 
 <template>
-<section id="stats">
-
     <div class="container-sm">
     
         <div class="row">
@@ -143,9 +141,8 @@ export default {
             </div>
     
         </div>
-    </div>
 
-</section>
+    </div>
 
 
 
@@ -155,70 +152,75 @@ export default {
 @use '../styles/variables' as *;
 
 
-#stats{
+.row{
+    padding-block: 130px;
+    display: flex;
+    gap: 80px;
+   
+    .col-left{
+        width: 50%;
 
-    .row{
-        margin-block: 130px;
-        display: flex;
-        gap: 80px;
-       
-        .col-left{
-            width: 50%;
-    
-            hr{
-                margin-bottom: 25px ;
-            }
-    
-            button{
-                margin-top: 30px;
-                &:hover{
-                    span{
-                        color: $accentColor;
-                    }
-                }
-            }
+        hr{
+            margin-bottom: 25px ;
         }
-    
-        .col-right{
-            width: 50%;
 
-            .stat{
-    
-                .info{
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 10px;
-                    
-                    font-weight: bold;
-
-                    .name{
-                        font-family: "Libre Baskerville", serif;
-
-                    }
-                }
-                
-                .bar{
-                    width: 100%;
-                    height: 2px;
-                    margin-bottom: 36px;
-
-                    background-color: rgb(213, 207, 207);
-
-                    .control-bar{
-                        
-                        .bar-full{
-                            height:4px;
-                            background-color: $accentColor;
-                            width: 30%;
-                        }
-                    }
-
+        button{
+            margin-top: 30px;
+            &:hover{
+                span{
+                    color: $accentColor;
                 }
             }
-    
         }
     }
 
+    .col-right{
+        width: 50%;
+
+        .stat{
+
+            .info{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                
+                font-weight: bold;
+
+                .name{
+                    font-family: "Libre Baskerville", serif;
+
+                }
+
+                .num{
+                    font-family: "Libre Baskerville", serif;
+
+                }
+            }
+            
+            .bar{
+                width: 100%;
+                height: 1px;
+                margin-bottom: 36px;
+
+                background-color: rgb(213, 207, 207);
+
+                .control-bar{
+                    position: relative;
+                    
+                    .bar-full{
+                        position: absolute;
+                        top: -3px;
+
+                        height:4px;
+                        background-color: $accentColor;
+                        width: 30%;
+                    }
+                }
+
+            }
+        }
+
+    }
 }
 
 

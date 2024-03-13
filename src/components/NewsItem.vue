@@ -47,6 +47,7 @@ export default {
 
 .news{
 
+   
     .image-news{
         position: relative;
         margin-bottom: 35px;

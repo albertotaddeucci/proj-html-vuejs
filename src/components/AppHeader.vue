@@ -223,7 +223,7 @@ nav{
 
       i{
         position: absolute;
-        top: 0;
+        top: 1px;
         left: 0%;
 
         transform: translate(-100%);
