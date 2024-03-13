@@ -4,10 +4,6 @@ import {store} from '../store.js'
 export default {
     name: "AppTestimonials",  
     
-    // props: {
-    //     event: Object,
-    // },
-
     data(){
       return{
         store, 
@@ -31,7 +27,10 @@ export default {
             
         ],
 
-        slideIndex: 0,                                   
+
+        
+        playerIndex:0,
+        playerOn: false
 
       }
     },
@@ -48,6 +47,9 @@ export default {
             if(this.slideIndex < 0){
                 this.slideIndex=this.testimonials.length - 1
             }
+        },
+        showPlayer(){
+            this.playerOn=true
         }
     }
 }
@@ -57,41 +59,57 @@ export default {
 
 
 <template>
-  <section id="testimonials">
 
-        <div class="container">
+<section id="testimonials">
 
-            <span class="title">Testimonials.</span>
-            
-            <div>
-                
-                <div class="testimonial-list" v-for="testimonial,index in testimonials" >
-                    <div class="testimonial" 
-                    :class="slideIndex==index ? 'showing' : ''"
-                    >
-                        <img :src="testimonial.image" alt="">
-                        <div class="name">{{ testimonial.name }}</div>
-                        <p>{{ testimonial.quote }}</p>
-        
-                        
-                        <div class="slider-count">
-                            <div>0{{index+1}}</div>
-                            <div><hr></div>
-                            <div>0{{testimonials.length}}</div>
-                        </div>
+    <div class="container">
+      
+        <span class="title">Testimonials.</span>
+          
+        <div>
+              
+            <div class="testimonial-list" v-for="testimonial,index in testimonials" >
+                <div class="testimonial" 
+                  :class="slideIndex==index ? 'showing' : ''"
+                >
+                    <img :src="testimonial.image" alt="">
+                    <div class="name">{{ testimonial.name }}</div>
+                    <p>{{ testimonial.quote }}</p>
+      
+                      
+                    <div class="slider-count">
+                          <div>0{{index+1}}</div>
+                          <div><hr></div>
+                          <div>0{{testimonials.length}}</div>
                     </div>
                 </div>
             </div>
-            
-            <div class="arrows">
-                <span @click="this.slideLeft"><i class="fa-solid fa-arrow-left-long"></i></span>
-                <span @click="this.slideRight"><i class="fa-solid fa-arrow-right-long"></i></span>
-                
-            </div>
         </div>
+          
+        <div class="arrows">
+            <span @click="this.slideLeft"><i class="fa-solid fa-arrow-left-long"></i></span>
+            <span @click="this.slideRight"><i class="fa-solid fa-arrow-right-long"></i></span>
+              
+        </div>
+    </div>
+      
+      
+</section>
+<section id="player">
+    
+    
+    <div id="player-overlay" v-show="playerOn==true">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/1210uCj6Ydg?si=u1VxH9X8pyGkSsPl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
+    </div>
 
-  </section>
+
+    <button @click="showPlayer"><i class="fa-solid fa-play"></i></button>
+    
+
+
+</section>
+
 
 
 </template>
@@ -188,6 +206,46 @@ export default {
         }
     }
 
+}
+
+#player{
+
+    position: relative;
+
+    height: 920px;
+    background-image: url("/img/h1-img-04.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        font-size: 55px;
+        scale: 1;
+        transition: scale 0.3s ease;
+
+        &:hover{
+            scale: 1.3;
+        }
+    }
+    
+
+    #player-overlay{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 3;
+
+
+        transform: translate(-50%, -50%)
+
+        
+
+    }
+
+   
 }
 
 

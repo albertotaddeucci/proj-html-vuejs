@@ -125,17 +125,17 @@ export default {
 
                     
                     &.ny{
-                    top: 25%;
+                    top: 28%;
                     left: 23%;
                     }
 
                     &.ln{
-                        top: 16%;
+                        top: 18%;
                         left: 51%;
                     }
 
                     &.mb{
-                        top: 53%;
+                        top: 58%;
                         left: 83%;
                     }
                     
