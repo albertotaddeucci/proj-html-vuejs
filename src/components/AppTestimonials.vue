@@ -62,9 +62,9 @@ export default {
 
 <section id="testimonials">
 
+    <span class="title">Testimonials.</span>
     <div class="container">
-      
-        <span class="title">Testimonials.</span>
+        
           
         <div>
               
@@ -79,7 +79,9 @@ export default {
                       
                     <div class="slider-count">
                           <div>0{{index+1}}</div>
-                          <div><hr></div>
+                          <div class="slider-rectangle">
+                            <div class="rectangle" :class="index==1?'m':index==2?'e':''"></div>
+                          </div>
                           <div>0{{testimonials.length}}</div>
                     </div>
                 </div>
@@ -126,13 +128,15 @@ export default {
     .title{
         display: block;
         position: absolute;
-        left: 50%;
         top: -3%;
+        left: 50%;
         transform: translateX(-50%);
 
         font-size: 180px ;
         font-weight: bold;
         font-family: "Libre Baskerville", serif;
+
+        user-select: none;
 
     }
     
@@ -193,6 +197,30 @@ export default {
                     padding-top: 20px;
 
                     color: white;
+
+                    .slider-rectangle{
+                        height: 3px;
+                        width: 100px;
+                        background-color: grey;
+
+                        .rectangle{
+                            height: 3px;
+                            width: 33px;
+                            background-color: white;
+
+                            &.m{
+                                
+                                margin-left: 33px;
+    
+                            }
+                            &.e{
+                                
+                                margin-left: 66px;
+    
+                            }
+                        }
+
+                    }
 
                     
                 }

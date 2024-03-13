@@ -8,11 +8,11 @@ export default {
       return{
         store,
 
-        prova:"0%",
+        max:'',
         width: 0,
         id:'',
-        prova2:'',
         stop: 50,
+
 
         scrolledPastTriggerPoint: false,
 
@@ -22,19 +22,23 @@ export default {
         stats: [
             {
                 name: "Mentorship",
-                percentage: "78%"
+                percentage: "78%",
+                num: 78,
             },
             {
                 name: "Education",
-                percentage: "95%"
+                percentage: "95%",
+                num: 95,
             },
             {
                 name: "Learning",
-                percentage: "65%"
+                percentage: "65%",
+                num: 65,
             },
             {
                 name: "Motivation",
-                percentage: "83%"
+                percentage: "83%",
+                num: 83,
             },
         ]
 
@@ -43,21 +47,35 @@ export default {
       }
     },
     methods:{
+
+        count(num){
+
+            let label            
+            
+            if(this.width<num){
+                label = this.width
+                return label 
+            } else {
+
+                return label = num
+
+            }
+
+        },
         
         frame() {              
+            this.count()
             
             if (this.width >= 100 ) {
                 clearInterval(this.id);
-                this.prova = this.prova2
                 return
 
                 
             } else {
                 this.width++; 
-                this.prova2 = this.width + '%';                
-                this.prova = this.prova2
-                this.label = this.width + '%'
+                this.max = this.width + '%';                
             }
+
             
             
 
@@ -70,7 +88,7 @@ export default {
             if (scrollTop >= triggerPoint && !this.scrolledPastTriggerPoint) {
                 this.scrolledPastTriggerPoint = true;
                 this.$emit("scrolled-past-trigger-point");
-                this.id=setInterval(this.frame,40)
+                this.id=setInterval(this.frame,20)
             }
         },
         
@@ -104,13 +122,13 @@ export default {
                             {{stat.name}}
                         </div>
                         <div class="num">
-                            {{ stat.percentage }}
+                            {{ this.count(stat.num) + "%" }}
                         </div>
                     </div>
 
                     <div class="bar"  >
                         <div class="control-bar" :style="{ width: stat.percentage}">
-                            <div class="bar-full" :style="{ width: this.prova}"></div>
+                            <div class="bar-full" :style="{ width: this.max}"></div>
                         </div>
                     </div>
 
