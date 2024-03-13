@@ -108,7 +108,7 @@ export default {
         <div class="row">
     
             <div class="col-left">
-                <h3>Creative Leader</h3>
+                <h3>Creative Leader<span class="dot">.</span></h3>
                 <hr>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa minima unde numquam nesciunt fuga atque? Libero, architecto ipsum! Est numquam assumenda voluptates voluptatum itaque sit sequi. Repudiandae perspiciatis qui incidunt!</p>
                 <button>read more <span><i class="fa-solid fa-arrow-right-long"></i></span></button>

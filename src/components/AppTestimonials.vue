@@ -132,6 +132,7 @@ export default {
         left: 50%;
         transform: translateX(-50%);
 
+
         font-size: 180px ;
         font-weight: bold;
         font-family: "Libre Baskerville", serif;
@@ -199,12 +200,12 @@ export default {
                     color: white;
 
                     .slider-rectangle{
-                        height: 3px;
+                        height: 2px;
                         width: 100px;
                         background-color: grey;
 
                         .rectangle{
-                            height: 3px;
+                            height: 2px;
                             width: 33px;
                             background-color: white;
 

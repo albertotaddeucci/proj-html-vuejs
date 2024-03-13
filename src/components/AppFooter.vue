@@ -184,7 +184,8 @@ footer{
           }
           
         }
-        
+       
+         
       }
     }
 
@@ -197,7 +198,7 @@ footer{
       }
 
       input{
-        width: 100%;
+        width: 300px;
         margin-top: 30px;
 
         background: transparent;

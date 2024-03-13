@@ -28,6 +28,11 @@ export default {
             
         }
     },
+    methods:{
+      scrollToTop() {
+        window.scrollTo(0, 0);
+}
+    }
 
 }
 
@@ -53,12 +58,17 @@ export default {
     :impLinks="footerData.importantLinks"
     :contacts="footerData.contactList">
   </AppFooter>
-
+  <div class="go-top" @click="scrollToTop">
+    <span><i class="fa-solid fa-arrow-up"></i></span>
+    
+  </div>
 
 </template>
 
 <style lang="scss">
 @use './styles/general.scss' as *;
+@use './styles/variables' as *;
+
 
 #fixed{
   position: fixed;
@@ -100,6 +110,22 @@ export default {
 
 
 
+}
+
+
+.go-top{
+  position: fixed;
+  z-index: 9;
+  top: 900px;
+  right: 20px;
+  padding: 20px 25px;
+  background-color: white;
+
+  border-radius: 50%;
+
+  color: $accentColor;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 </style>

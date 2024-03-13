@@ -107,7 +107,7 @@ export default {
       >
         <div class="jumbo-info">
           
-          <h1>{{ currentSlide.title }}</h1>
+          <h1 class="prova">{{ currentSlide.title }}<span class="dot">.</span></h1>
           <p>{{ currentSlide.text }}</p>
           <div class="buttons">
             <button class="cta-primary"><div>read more</div> <span><i class="fa-solid fa-arrow-right-long"></i></span></button>
@@ -149,10 +149,12 @@ export default {
     position: absolute; 
     top: 45%;
     left: 20%;
+
     
     p{
       width: 55ch;
       margin-bottom: 45px;
+      font-size: 20px;
     }
     
     .buttons{

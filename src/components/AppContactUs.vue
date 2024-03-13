@@ -66,7 +66,7 @@ export default {
 
                 </div>
                 <div class="contact-info">
-                    <h2>Contact us</h2>
+                    <h2>Contact us<span class="dot">.</span></h2>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                     <hr>
                     <div>

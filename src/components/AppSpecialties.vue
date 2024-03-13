@@ -24,7 +24,7 @@ export default {
 
         <div class="container specialties">
             
-            <h2>Our specialties.</h2>
+            <h2>Our specialties<span class="dot">.</span></h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
             <hr>
             <div id="list-specialties">
@@ -55,6 +55,8 @@ section:first-of-type{
     background-color: #fafafa;
 }
 
+
+
 .specialties{
     display: flex;
     flex-direction: column;
@@ -65,6 +67,10 @@ section:first-of-type{
     transform: translateY(-50px);
 
     background-color: white;
+
+    p{
+        font-size: 20px;
+    }
 
     hr{
         margin-top: 30px;
@@ -94,6 +100,7 @@ section:first-of-type{
         }
 
         p{
+            font-size: 16px;
             width: 230px;
         }
     }
